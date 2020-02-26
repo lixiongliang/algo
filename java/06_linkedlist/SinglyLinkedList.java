@@ -321,8 +321,8 @@ public class SinglyLinkedList {
             //link.insertToHead(data[i]);
             link.insertTail(data[i]);
         }
-       // link.printAll();
-       // Node p = link.inverseLinkList_head(link.head);
+      // link.printAll();
+      Node p = link.inverseLinkList_head(link.head);
        // while(p != null){
        //     System.out.println("aa"+p.data);
        //     p = p.next;

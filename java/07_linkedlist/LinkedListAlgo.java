@@ -1,5 +1,9 @@
 package linkedlist;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 /**
  * 1) 单链表反转
  * 2) 链表中环的检测
@@ -10,6 +14,21 @@ package linkedlist;
  * Author: Zheng
  */
 public class LinkedListAlgo {
+
+    private     linkedlist.SinglyLinkedList.Node head = null;
+
+
+  public static void main(String[] args) {
+    List<Node> nodeList = new ArrayList<>();
+    Random random = new Random(100);
+      Node node = createNode(0);
+      for(int i =10;i<20;i++) {
+         new Node(random.nextInt(),node);
+    }
+  // printAll(nodeList);
+  }
+
+
 
   // 单链表反转
   public static Node reverse(Node list) {
@@ -88,26 +107,26 @@ public class LinkedListAlgo {
  	*     ListNode(int x) { val = x; }
  	* }
 	*/
-   public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        ListNode soldier = new ListNode(0); //利用哨兵结点简化实现难度 技巧三
-        ListNode p = soldier;
-        
-        while ( l1 != null && l2 != null ){
-            if ( l1.val < l2.val ){
-                p.next = l1;
-                l1 = l1.next;
-            }
-            else{
-                p.next = l2;
-                l2 = l2.next;
-            }
-            p = p.next;
-        }
-        
-        if (l1 != null) { p.next = l1; }
-        if (l2 != null) { p.next = l2; }
-        return soldier.next;   
-    }
+//   public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+//        ListNode soldier = new ListNode(0); //利用哨兵结点简化实现难度 技巧三
+//        ListNode p = soldier;
+//
+//        while ( l1 != null && l2 != null ){
+//            if ( l1.val < l2.val ){
+//                p.next = l1;
+//                l1 = l1.next;
+//            }
+//            else{
+//                p.next = l2;
+//                l2 = l2.next;
+//            }
+//            p = p.next;
+//        }
+//
+//        if (l1 != null) { p.next = l1; }
+//        if (l2 != null) { p.next = l2; }
+//        return soldier.next;
+//    }
 
 
   // 删除倒数第K个结点
